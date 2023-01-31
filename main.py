@@ -7,6 +7,7 @@ from errors import Error, LetterboxdException
 
 def main():
 
+    # check for correct file placement and naming
     dataDirPath = os.path.realpath("data")
     files = os.listdir(dataDirPath)
     if "ratings.csv" not in files:
@@ -16,6 +17,7 @@ def main():
 
     ratingsPath = os.path.realpath("data/ratings.csv")
 
+    # drop irrelevant features from dataframe
     df = pd.read_csv(ratingsPath)
     if df.isnull().any().any():
             df.dropNull(df)
@@ -29,10 +31,6 @@ def main():
 
     plt.show()
     
-            
-            
-            
-
-
 if __name__ == "__main__":
     main()
+    
