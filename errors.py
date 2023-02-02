@@ -1,7 +1,8 @@
 class Error:
     """Helper class for error types and codes."""
     wrong_filename = 101
-    empty_data = 102
+    empty_data_dir = 102
+    not_enough_films = 103
 
 class LetterboxdException(Exception):
     """Exception class to throw custom exceptions."""
