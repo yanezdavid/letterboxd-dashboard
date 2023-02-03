@@ -29,4 +29,4 @@
 4. Select ```dashboard.png``` to look at your dashboard.
 
 ### Errors & Exceptions
-Custom errors will display if certain conditions prevent ```letterboxd-dashboard``` from executing. If, after running ```python main.py```, the prgram terminates, search in terminal for ```LetterboxdException``` error messages with general instructions on how to succesfully execute the program.
+Custom errors will display if certain conditions prevent ```letterboxd-dashboard``` from executing. If, after running ```python main.py```, the program terminates, search in terminal for ```LetterboxdException``` error messages with general instructions on how to succesfully execute the program.
