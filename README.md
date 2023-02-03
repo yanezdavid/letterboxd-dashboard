@@ -14,7 +14,7 @@
 # How to Use ```letterboxd-dashboard```
 
 ### Letterboxd
-[Letterboxd](https://letterboxd.com/) is a social platform for sharing your taste in film. To use ```letterboxd-dashboard```, one must have an active Letterboxd account, and at least 100 films rated. The more films you have rated in your Letterboxd account, the better the dashboard. (If you are not a Letterboxd user but would like to use ```letterboxd-dashboard```, continue reading for special instruction.)
+[Letterboxd](https://letterboxd.com/) is a social platform for sharing your taste in film. To use ```letterboxd-dashboard```, one must have an active Letterboxd account, and at least 100 films rated. The more films you have rated in your Letterboxd account, the better the dashboard. First, you must retrieve the data from your Letterboxd account with the following steps:
 
 1. Navigate to the ```IMPORT & EXPORT``` page under your [Letterboxd profile settings](https://letterboxd.com/settings/data/).
 2. Select ```EXPORT YOUR DATA```. A pop up will appear to confirm. Select ```EXPORT YOUR DATA``` again.
