@@ -1,7 +1,7 @@
 # letterboxd-dashboard
 
 ### Purpose
-```letterboxd-dashboard``` uses data from a Letterboxd user's film ratings to create a dashboard on their rating patterns.
+```letterboxd-dashboard``` uses data from your profile on Letterboxd — a film social media site where you can log and rate films — to create a dashboard on your rating patterns.
 
 ### Technologies Used
 * python 3.11.1
@@ -11,7 +11,7 @@
 * Navigate to the top level of the directory: ```letterboxd-dashboard/```.
 * Install requirements with the command: ```pip -r requirements.txt```.
 
-# How to Use letterboxd-dashboard
+# How to Use ```letterboxd-dashboard```
 
 ### Letterboxd
 [Letterboxd](https://letterboxd.com/) is a social platform for sharing your taste in film. To use ```letterboxd-dashboard```, one must have an active Letterboxd account, and at least 100 films rated. The more films you have rated in your Letterboxd account, the better the dashboard. (If you are not a Letterboxd user but would like to use ```letterboxd-dashboard```, continue reading for special instruction.)
