@@ -29,7 +29,7 @@
 
 ### Exit Program
 If you would like to run the program again, enter ```command or ctrl + c``` to quit the dash app. Repeat the three steps outlined
-in the ```Create Dashboard``` section above.
+in the ```Create Dashboard``` section above to create another dashboard.
 
 ### Errors & Exceptions
 Custom errors will display if certain conditions prevent ```letterboxd-dashboard``` from executing. If, after running ```python main.py```, the program terminates, search in terminal for ```LetterboxdException``` error messages with general instructions on how to succesfully execute the program.
