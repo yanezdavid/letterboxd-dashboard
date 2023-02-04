@@ -24,3 +24,7 @@ class Dataframe():
     def createDecadeColumn(self):
         """Creates new Decade column on dataframe."""
         self.dataframe["Decade"] = self.dataframe["Year"].apply(lambda x: f"{str(x)[:-1]}0s")
+
+    def createYearWatchedColumn(self):
+        """Creates mew year watched column on dataframe."""
+        self.dataframe["Year Watched"] = self.dataframe["Date"].apply(lambda x : "20" + f"{str(x)[-2:]}")
