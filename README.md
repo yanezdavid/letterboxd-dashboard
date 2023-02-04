@@ -22,9 +22,9 @@
 4. Navigate into the unzipped folder.
 5. Move the ```ratings.csv``` file into ```data``` directory at ```letterboxd-dashboard/data/``` in your cloned repository.
 
-<i>If you don't have Letterboxd and would still like to check out ```letterboxd-dashboard```, navigate to the
+<i>If you don't have Letterboxd and would still like to check out ```letterboxd-dashboard```, navigate to the 
   ```letterboxd-dashboard/sample-data/``` directory. Inside, there is an example ```ratings.csv``` from my own Letterboxd account.
- place it into the ```letterboxd-dashboard/data``` directory and continue through the instructions</i>. 
+ Place it into the ```letterboxd-dashboard/data``` directory and continue through the instructions</i>. 
 
 ### Create Dashboard
 1. Ensure you have navigated to the top level of the directory: ```letterboxd-dashboard/```.
