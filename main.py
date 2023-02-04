@@ -51,10 +51,14 @@ def main():
     # scatter and regression
     yearRatingsScatterplot = plots.yearRatingsScatterplot()
 
+
     # create app layout
     app.layout = html.Div(children=[
     html.H1(children='Letterboxd Dashboard',
-            style={'textAlign': 'center', 'font-family': 'Arial, sans-serif', 'font-size': '32px', 'color': '#2c3e50', 'margin-top': '30px'}),
+            style={'textAlign': 'center'}),
+
+    html.Div(children=f'''Your favorite decade is the {"1940s"}''',
+             style={'textAlign': 'left'}),
 
     html.Div(children='''An Analysis of Your Film Ratings''',
              style={'textAlign': 'center', 'font-family': 'Arial, sans-serif', 'font-size': '18px', 'color': '#7f8c8d', 'margin-bottom': '30px'}),
