@@ -3,14 +3,7 @@ from dataframe import Dataframe
 
 
 class Plots(Dataframe):
-    """
-    Class for creating plotly visualizations.
-
-    Attributes
-    ----------
-    dataframe : Dataframe
-        a pandas dataframe object
-    """
+    """Class for creating plotly visualizations."""
     def ratingsHistogram(self):
         """Returns histogram of film ratings."""
         
@@ -55,7 +48,29 @@ class Plots(Dataframe):
 
     def showRatingsByDecadeBar(self):
         """Shows bar plot of average film ratings by decade of film release."""
-        self.createDecadeColumn().show()
+        self.ratingsByDecadeBar().show()
+
+    def ratingsByYearWatchedBar(self):
+        """Returns bar plot of average film ratings by decade of film release."""
+        self.createYearWatchedColumn()
+
+        ratingsByYearWatchedBar = px.bar(self.dataframe.groupby(["Year Watched"]).mean().reset_index(),
+                        text_auto=True, x="Year Watched", y="Rating", width=1200, height=800, opacity=.75)
+
+        ratingsByYearWatchedBar.update_layout(yaxis_range=[.5, 5], barmode='group', bargap=0.30, bargroupgap=0.0,
+                             title="Does the Year You Watched Films in Affect Your Rating of Them?<br>(Your Average Film Ratings grouped by the Year You Watched Them)",
+                             title_x=.5)
+
+        ratingsByYearWatchedBar.update_xaxes(title_text='Year You Watched Film', ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
+
+        ratingsByYearWatchedBar.update_yaxes(title_text='Your Average Film Ratings', ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
+
+        return ratingsByYearWatchedBar
+
+    def showRatingsByYearWatchedBar(self):
+        """Shows bar plot of average film ratings by decade of film release."""
+        self.ratingsByYearWatchedBar().show()
+
 
     def yearRatingsScatterplot(self):
         """Returns scatterplot of year vs film ratings."""
