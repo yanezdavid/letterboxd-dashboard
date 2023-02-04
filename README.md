@@ -20,7 +20,11 @@
 2. Select ```EXPORT YOUR DATA```. A pop up will appear to confirm. Select ```EXPORT YOUR DATA``` again.
 3. A ```.zip``` file will download. Select it to unzip it.
 4. Navigate into the unzipped folder.
-5. Move the ```ratings.csv``` file into ```data``` directory at ```letterboxd-dashboard/data``` in your cloned repository.
+5. Move the ```ratings.csv``` file into ```data``` directory at ```letterboxd-dashboard/data/``` in your cloned repository.
+
+<i>If you don't have Letterboxd and would still like to check out ```letterboxd-dashboard```, navigate to the
+  ```letterboxd-dashboard/sample-data/``` directory. Inside, there is an example ```ratings.csv``` from my own Letterboxd account.
+ place it into the ```letterboxd-dashboard/data``` directory and continue through the instructions</i>. 
 
 ### Create Dashboard
 1. Ensure you have navigated to the top level of the directory: ```letterboxd-dashboard/```.
@@ -32,4 +36,11 @@ If you would like to run the program again, enter ```command or ctrl + c``` to q
 in the ```Create Dashboard``` section above to create another dashboard.
 
 ### Errors & Exceptions
-Custom errors will display if certain conditions prevent ```letterboxd-dashboard``` from executing. If, after running ```python main.py```, the program terminates, search in terminal for ```LetterboxdException``` error messages with general instructions on how to succesfully execute the program.
+Custom error message will display as a outpit if certain conditions prevent ```letterboxd-dashboard``` from executing. If, after running ```python main.py```, the program terminates, search in terminal for ```LetterboxdException``` error messages with general instructions on how to succesfully execute the program.
+
+Some common failures to execute include:
+1. Not having ```ratings.csv``` in the ```letterboxd/data/``` directory.
+2. ```ratings.csv``` is empty, or has less than 100 films within in.
+
+If you run into other errors, please create an issue so that I can improve your experience.
+
