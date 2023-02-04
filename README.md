@@ -25,8 +25,11 @@
 ### Create Dashboard
 1. Ensure you have navigated to the top level of the directory: ```letterboxd-dashboard/```.
 2. Enter the command: ```python main.py``` to generate the dashboard.
-3. Navigate to the ```letterboxd/visualizations``` directory.
-4. Select ```dashboard.png``` to look at your dashboard.
+3. A dash webpage will open on your web browser containing the dashboard.
+
+### Exit Program
+If you would like to run the program again, enter ```command or ctrl + c``` to quit the dash app. Repeat the three steps outlined
+in the ```Create Dashboard``` section above.
 
 ### Errors & Exceptions
 Custom errors will display if certain conditions prevent ```letterboxd-dashboard``` from executing. If, after running ```python main.py```, the program terminates, search in terminal for ```LetterboxdException``` error messages with general instructions on how to succesfully execute the program.
