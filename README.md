@@ -24,7 +24,7 @@
 
 ### Create Dashboard
 1. Ensure you have navigated to the top level of the directory: ```letterboxd-dashboard/```.
-2. Enter the command: ```python main.py``` to generate the dashboard.
+2. Enter the command: ```python main.py```, or, run ```main.py``` on your local editor with the cloned repository.
 3. A dash webpage will open on your web browser containing the dashboard.
 
 ### Exit Program
