@@ -37,12 +37,12 @@ class Plots(Dataframe):
                         text_auto=True, x="Decade", y="Rating", width=1200, height=800, opacity=.75)
 
         ratingsByDecadeBar.update_layout(yaxis_range=[.5, 5], barmode='group', bargap=0.30, bargroupgap=0.0,
-                             title="What is Your Favorite Decade of Cinema?<br>(Your Average Film Ratings grouped by Decade of Film Release)",
+                             title="What is Your Favorite Decade of Cinema?<br>(Average Film Ratings Grouped by Decade of Film Release)",
                              title_x=.5)
 
         ratingsByDecadeBar.update_xaxes(title_text='Decade of Film Release', ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
 
-        ratingsByDecadeBar.update_yaxes(title_text='Your Average Film Ratings', ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
+        ratingsByDecadeBar.update_yaxes(title_text='Average Film Ratings', ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
 
         return ratingsByDecadeBar
 
@@ -58,12 +58,12 @@ class Plots(Dataframe):
                         text_auto=True, x="Year Watched", y="Rating", width=1200, height=800, opacity=.75)
 
         ratingsByYearWatchedBar.update_layout(yaxis_range=[.5, 5], barmode='group', bargap=0.30, bargroupgap=0.0,
-                             title="Does the Year You Watched Films in Affect Your Rating of Them?<br>(Your Average Film Ratings grouped by the Year You Watched Them)",
+                             title="Did You Rate Films Differently Based on the Year you Watched Them?<br>(Average Film Ratings Grouped by Year Watched)",
                              title_x=.5)
 
-        ratingsByYearWatchedBar.update_xaxes(title_text='Year You Watched Film', ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
+        ratingsByYearWatchedBar.update_xaxes(title_text='Year Film Was Watched', ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
 
-        ratingsByYearWatchedBar.update_yaxes(title_text='Your Average Film Ratings', ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
+        ratingsByYearWatchedBar.update_yaxes(title_text='Average Film Ratings', ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
 
         return ratingsByYearWatchedBar
 
@@ -76,9 +76,11 @@ class Plots(Dataframe):
         """Returns scatterplot of year vs film ratings."""
         yearRatingsScatterplot = px.scatter(self.dataframe, x='Year', y='Rating', opacity=.75, trendline="ols",
                                 trendline_color_override="lightblue", width=1200, height=800,)
+        yearRatingsScatterplot.update_layout(title="Is There a Relationship Between your Film Ratings and the Year of Film Release?<br>(Film Ratings vs Film Release Year)",
+                                             title_x=.5)
 
         yearRatingsScatterplot.update_xaxes(title_text="Year of Film Release", ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
-        yearRatingsScatterplot.update_yaxes(title_text="Your Film Ratings", ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
+        yearRatingsScatterplot.update_yaxes(title_text="Film Ratings", ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
 
         return yearRatingsScatterplot
 

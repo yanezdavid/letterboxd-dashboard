@@ -1,9 +1,10 @@
 import pandas as pd
+from errors import LetterboxdException, Error
 
 
 class Dataframe():
     """
-    Class for editing dataframes.
+    Class for editing pandas dataframes.
 
     Attributes
     ----------
@@ -12,6 +13,10 @@ class Dataframe():
     """
     def __init__(self, dataframe):
         self.dataframe = dataframe
+        if len(self.dataframe) < 100:
+            raise LetterboxdException("Must have at least 100 films rated", Error.not_enough_films)
+        self.removeNull()
+        self.dropLetterboxdURI()
 
     def getDataframe(self):
         """Returns dataframe."""
@@ -27,4 +32,14 @@ class Dataframe():
 
     def createYearWatchedColumn(self):
         """Creates mew year watched column on dataframe."""
-        self.dataframe["Year Watched"] = self.dataframe["Date"].apply(lambda x : "20" + f"{str(x)[-2:]}")
+        self.dataframe["Year Watched"] = self.dataframe["Date"].apply(lambda x : str(x[0:4]))
+        print(self.dataframe["Year Watched"])
+
+    def removeNull(self):
+        """Drops any row with null values in it."""
+        if self.dataframe.isnull().any().any():
+            self.dataframe.dropNull(self.dataframe)
+
+    def dropLetterboxdURI(self):
+        """Drops Letterboxd URI column."""
+        self.dataframe.drop(columns=["Letterboxd URI"])

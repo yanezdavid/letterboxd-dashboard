@@ -35,15 +35,8 @@ def main():
     # get csv path
     ratingsPath = os.path.realpath("data/ratings.csv")
 
-    # drop irrelevant features from dataframe
+    # convert csv to pandas dataframe
     df = pd.read_csv(ratingsPath)
-    if df.isnull().any().any():
-        df.dropNull(df)
-    df.drop(columns=["Letterboxd URI"])
-
-    # throw error if user has less than 100 rated films
-    if len(df) < 100:
-        raise LetterboxdException("Must have at least 100 films rated", Error.not_enough_films)
 
     # initialise plots object
     plots = Plots(df)
@@ -58,20 +51,32 @@ def main():
     # scatter and regression
     yearRatingsScatterplot = plots.yearRatingsScatterplot()
 
-
     # create app layout
     app.layout = html.Div(children=[
     html.H1(children='Letterboxd Dashboard',
-            style={'textAlign': 'center'}),
+            style={'textAlign': 'center', 'font-family': 'Arial, sans-serif', 'font-size': '32px', 'color': '#2c3e50', 'margin-top': '30px'}),
 
     html.Div(children='''An Analysis of Your Film Ratings''',
-             style={'textAlign': 'center'}),
+             style={'textAlign': 'center', 'font-family': 'Arial, sans-serif', 'font-size': '18px', 'color': '#7f8c8d', 'margin-bottom': '30px'}),
 
-    dcc.Graph(figure=ratingsHistogram),
-    dcc.Graph(figure=ratingsByDecadeBar),
-    dcc.Graph(figure=yearRatingsScatterplot),
-    dcc.Graph(figure=ratingsByYearWatchedBar)
+    html.Div(
+        dcc.Graph(figure=ratingsHistogram),
+            style={'margin': '0', 'width': '100%', 'display': 'flex', 'justify-content': 'center', 'align-items': 'center'}
+    ),
+    html.Div(
+        dcc.Graph(figure=ratingsByDecadeBar),
+            style={'margin': '30px 0', 'width': '100%', 'display': 'flex', 'justify-content': 'center', 'align-items': 'center'}
+    ),
+    html.Div(
+        dcc.Graph(figure=ratingsByYearWatchedBar),
+            style={'margin': '30px 0', 'width': '100%', 'display': 'flex', 'justify-content': 'center', 'align-items': 'center'}
+    ),
+    html.Div(
+        dcc.Graph(figure=yearRatingsScatterplot),
+            style={'margin': '30px 0', 'width': '100%', 'display': 'flex', 'justify-content': 'center', 'align-items': 'center'}
+    )
     ])
+
     
 if __name__ == "__main__":
     main()
