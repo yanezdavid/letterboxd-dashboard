@@ -28,15 +28,15 @@
 
 ### Create Dashboard
 1. Ensure you have navigated to the top level of the directory: ```letterboxd-dashboard/```.
-2. Enter the command: ```python main.py```, or, run ```main.py``` on your local editor with the cloned repository.
-3. A dash webpage will open on your web browser containing the dashboard.
+2. Run the ```main.py``` file.
+3. A dash webpage will open on your web browser containing the dashboard ![(example attached)](https://github.com/yanezdavid/letterboxd-dashboard/blob/main/assets/dashboard-sample.png).
 
 ### Exit Program
 If you would like to run the program again, enter ```command or ctrl + c``` to quit the dash app. Repeat the three steps outlined
 in the ```Create Dashboard``` section above to create another dashboard.
 
 ### Errors & Exceptions
-Custom error message will display as a outpit if certain conditions prevent ```letterboxd-dashboard``` from executing. If, after running ```python main.py```, the program terminates, search in terminal for ```LetterboxdException``` error messages with general instructions on how to succesfully execute the program.
+Custom error messages will be raised if certain conditions prevent ```letterboxd-dashboard``` from executing. If, after running ```main.py```, the program terminates, search in terminal for ```LetterboxdException``` error messages with general instructions on how to succesfully execute the program.
 
 Some common failures to execute include:
 1. Not having ```ratings.csv``` in the ```letterboxd/data/``` directory.
