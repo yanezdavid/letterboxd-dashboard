@@ -29,7 +29,7 @@
 ### Create Dashboard
 1. Ensure you have navigated to the top level of the directory: ```letterboxd-dashboard/```.
 2. Run the ```main.py``` file.
-3. A dash webpage will open on your web browser containing the dashboard ![(example attached)](https://github.com/yanezdavid/letterboxd-dashboard/blob/main/assets/dashboard-sample.png).
+3. A dash webpage will open on your web browser containing the dashboard. Example attached below: ![(example attached)](https://github.com/yanezdavid/letterboxd-dashboard/blob/main/assets/dashboard-sample.png)
 
 ### Exit Program
 If you would like to run the program again, enter ```command or ctrl + c``` to quit the dash app. Repeat the three steps outlined

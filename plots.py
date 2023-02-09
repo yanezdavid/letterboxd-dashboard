@@ -11,11 +11,8 @@ class Plots(Dataframe):
 
     def ratingsHistogram(self):
         """Returns histogram of film ratings."""
-        ratingsHistogram = px.histogram(ratings_data, x="Rating", y="counts", text_auto=True, opacity=.75, width=1000, height=700)
-
-        # Add the separate trace for the highest bar
-        ratingsHistogram.add_trace(go.Bar(x=[highest_bar_x], y=[highest_bar_y], name='Highest bar',
-                                           marker=dict(color='red', line=dict(color='red', width=2))))
+        
+        ratingsHistogram = px.histogram(self.dataframe, x="Rating", text_auto=True, opacity=.75, width=1200, height=800)
 
         ratingsHistogram.update_layout(
             xaxis = dict(
@@ -32,7 +29,6 @@ class Plots(Dataframe):
         ratingsHistogram.update_yaxes(title_text='Count', ticks="outside", ticklen=10, tickwidth=2, showgrid=True)
 
         return ratingsHistogram
-
 
     def ratingsByDecadeBar(self):
         """Returns bar plot of average film ratings by decade of film release."""
