@@ -33,7 +33,6 @@ class Dataframe():
     def createYearWatchedColumn(self):
         """Creates mew year watched column on dataframe."""
         self.dataframe["Year Watched"] = self.dataframe["Date"].apply(lambda x : str(x[0:4]))
-        print(self.dataframe["Year Watched"])
 
     def removeNull(self):
         """Drops any row with null values in it."""

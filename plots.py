@@ -4,10 +4,18 @@ from dataframe import Dataframe
 
 class Plots(Dataframe):
     """Class for creating plotly visualizations."""
+
+    def showRPlot(self, plot):
+        """Shows plotly plot."""
+        self.plot.show()
+
     def ratingsHistogram(self):
         """Returns histogram of film ratings."""
-        
-        ratingsHistogram = px.histogram(self.dataframe, x="Rating", text_auto=True, opacity=.75, width=1200, height=800)
+        ratingsHistogram = px.histogram(ratings_data, x="Rating", y="counts", text_auto=True, opacity=.75, width=1000, height=700)
+
+        # Add the separate trace for the highest bar
+        ratingsHistogram.add_trace(go.Bar(x=[highest_bar_x], y=[highest_bar_y], name='Highest bar',
+                                           marker=dict(color='red', line=dict(color='red', width=2))))
 
         ratingsHistogram.update_layout(
             xaxis = dict(
@@ -25,16 +33,16 @@ class Plots(Dataframe):
 
         return ratingsHistogram
 
-    def showRatingsHistogram(self):
-        """Shows histogram of film ratings."""
-        self.ratingsHistogram.show()
 
     def ratingsByDecadeBar(self):
         """Returns bar plot of average film ratings by decade of film release."""
         self.createDecadeColumn()
 
-        ratingsByDecadeBar = px.bar(self.dataframe.groupby(["Decade"]).mean().reset_index(),
-                        text_auto=True, x="Decade", y="Rating", width=1200, height=800, opacity=.75)
+        avg_ratings = self.dataframe.groupby(["Decade"]).mean().reset_index()
+        avg_ratings["Rating"] = avg_ratings["Rating"].round(1)
+
+        ratingsByDecadeBar = px.bar(avg_ratings,
+                        text_auto=True, x="Decade", y="Rating", width=1000, height=700, opacity=.75)
 
         ratingsByDecadeBar.update_layout(yaxis_range=[.5, 5], barmode='group', bargap=0.30, bargroupgap=0.0,
                              title="What is Your Favorite Decade of Cinema?<br>(Average Film Ratings Grouped by Decade of Film Release)",
@@ -46,16 +54,12 @@ class Plots(Dataframe):
 
         return ratingsByDecadeBar
 
-    def showRatingsByDecadeBar(self):
-        """Shows bar plot of average film ratings by decade of film release."""
-        self.ratingsByDecadeBar().show()
-
     def ratingsByYearWatchedBar(self):
         """Returns bar plot of average film ratings by decade of film release."""
         self.createYearWatchedColumn()
 
         ratingsByYearWatchedBar = px.bar(self.dataframe.groupby(["Year Watched"]).mean().reset_index(),
-                        text_auto=True, x="Year Watched", y="Rating", width=1200, height=800, opacity=.75)
+                        text_auto=True, x="Year Watched", y="Rating", width=1000, height=700, opacity=.75)
 
         ratingsByYearWatchedBar.update_layout(yaxis_range=[.5, 5], barmode='group', bargap=0.30, bargroupgap=0.0,
                              title="Did You Rate Films Differently Based on the Year you Watched Them?<br>(Average Film Ratings Grouped by Year Watched)",
@@ -67,23 +71,12 @@ class Plots(Dataframe):
 
         return ratingsByYearWatchedBar
 
-    def showRatingsByYearWatchedBar(self):
-        """Shows bar plot of average film ratings by decade of film release."""
-        self.ratingsByYearWatchedBar().show()
-
-
     def yearRatingsScatterplot(self):
         """Returns scatterplot of year vs film ratings."""
-        yearRatingsScatterplot = px.scatter(self.dataframe, x='Year', y='Rating', opacity=.75, trendline="ols",
-                                trendline_color_override="lightblue", width=1200, height=800,)
+        yearRatingsScatterplot = px.scatter(self.dataframe, x='Year', y='Rating', opacity=.75, trendline="ols", width=1000, height=700,)
         yearRatingsScatterplot.update_layout(title="Is There a Relationship Between your Film Ratings and the Year of Film Release?<br>(Film Ratings vs Film Release Year)",
                                              title_x=.5)
-
         yearRatingsScatterplot.update_xaxes(title_text="Year of Film Release", ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
         yearRatingsScatterplot.update_yaxes(title_text="Film Ratings", ticks="inside", ticklen=10, tickwidth=2, showgrid=True)
 
         return yearRatingsScatterplot
-
-    def showYearRatingsScatterplot(self):
-        """Shows scatterplot of year vs film ratings"""
-        self.yearRatingsScatterplot().show()
