@@ -4,3 +4,5 @@ numpy==1.23.1
 plotly==5.13.0
 dash==2.8.1
 statsmodels==0.13.5
+bs4==0.0.1
+nltk==3.8.1
