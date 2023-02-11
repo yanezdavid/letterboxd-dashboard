@@ -44,3 +44,6 @@ Some common failures to execute include:
 
 If you run into other errors, please create an issue so that I can improve your experience.
 
+# Features In-Progress
+- Natural Language Processing of Letterboxd reviews
+- Predicting ratings based on the review sentiment
