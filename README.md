@@ -36,7 +36,7 @@ If you would like to run the program again, enter ```command or ctrl + c``` to q
 in the ```Create Dashboard``` section above to create another dashboard.
 
 ### Errors & Exceptions
-Custom error messages will be raised if certain conditions prevent ```letterboxd-dashboard``` from executing. If, after running ```main.py```, the program terminates, search in terminal for ```LetterboxdException``` error messages with general instructions on how to succesfully execute the program.
+Custom error messages will be raised if certain conditions prevent ```letterboxd-dashboard``` from executing.
 
 Some common failures to execute include:
 1. Not having ```ratings.csv``` in the ```letterboxd/data/``` directory.
