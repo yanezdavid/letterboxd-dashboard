@@ -54,6 +54,9 @@ class Plots(Dataframe):
         """Returns bar plot of average film ratings by decade of film release."""
         self.createYearWatchedColumn()
 
+        avg_ratings = self.dataframe.groupby(["Year Watched"]).mean().reset_index()
+        avg_ratings["Rating"] = avg_ratings["Rating"].round(1)
+
         ratingsByYearWatchedBar = px.bar(self.dataframe.groupby(["Year Watched"]).mean().reset_index(),
                         text_auto=True, x="Year Watched", y="Rating", width=1000, height=700, opacity=.75)
 
