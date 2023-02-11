@@ -6,6 +6,7 @@ from nltk.stem import WordNetLemmatizer
 
 
 class Preprocess():
+    """Class for preprocessing text data for NLP."""
     def __init__(self):
         pass
 
